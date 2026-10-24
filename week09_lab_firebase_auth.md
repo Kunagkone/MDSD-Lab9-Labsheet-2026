@@ -887,11 +887,19 @@ service cloud.firestore {
 1. ภาพหน้าจอการทดสอบข้อที่ 1 (ล็อกอินค้างไว้ ปิดแอปทั้งหมด แล้วเปิดใหม่ -> เข้า MainScaffold ทันที):
 [แนบภาพหน้าจอเข้าหน้าหลักได้ทันทีโดยไม่ต้องล็อกอินใหม่ที่นี่]
 
+<img width="400" height="917" alt="image" src="https://github.com/user-attachments/assets/e6d576a8-6c6b-475b-aedd-2bfe3f4537f1" />
+<img width="421" height="903" alt="image" src="https://github.com/user-attachments/assets/2718488a-956b-40e1-bb68-121d48be262b" />
+
+
 2. ภาพหน้าจอการทดสอบข้อที่ 2 (ปิดเน็ต แล้วเปิดแท็บ "รายการโปรด" และ "ร่างของฉัน" -> ใช้งานได้ปกติจาก Drift SQLite):
 [แนบภาพหน้าจอแท็บรายการโปรด/ร่างทำงานได้ขณะ Offline ที่นี่]
+<img width="436" height="908" alt="image" src="https://github.com/user-attachments/assets/9323f589-7580-4802-9b74-6bc11df3ebd2" />
+
 
 3. ภาพหน้าจอการทดสอบข้อที่ 3 (ขณะปิดเน็ต กด "โพสต์ขายจริง" -> เกิด Error แจ้งเตือนอย่างถูกต้องและแอปไม่ Crash):
 [แนบภาพหน้าจอแสดง SnackBar Error เมื่อไม่มีการเชื่อมต่ออินเทอร์เน็ตที่นี่]
+<img width="427" height="957" alt="image" src="https://github.com/user-attachments/assets/33c58e37-050c-4928-9edf-0eeb4ce7b688" />
+<img width="430" height="932" alt="image" src="https://github.com/user-attachments/assets/c4fabd33-ad81-46a8-9a9f-48bc3f4145a1" />
 
 4. ภาพหน้าจอการทดสอบข้อที่ 4 (เปิดเน็ตกลับมา แล้วกด "โพสต์ขายจริง" ใหม่ -> โพสต์สำเร็จ ร่างถูกลบ):
 [แนบภาพหน้าจอโพสต์ขายสำเร็จและแสดงผลบนหน้า Home ที่นี่]
