@@ -426,9 +426,11 @@ avdmanager list avd
 
 1. ภาพหน้าจอขณะเลือกบัญชี Google (Google Account Chooser)
 [แนบภาพหน้าจอเลือกบัญชี Google ที่นี่]
+<img width="468" height="952" alt="image" src="https://github.com/user-attachments/assets/b0881e9e-b73b-45e8-b525-6a2efdab5254" />
 
 2. ภาพหน้าจอ Firebase Console เมนู Authentication -> Users (แสดงผู้ใช้ที่ Provider เป็น Google)
 [แนบภาพหน้าจอ Firebase Console แสดงผู้ใช้ Provider: Google ที่นี่]
+<img width="1916" height="965" alt="image" src="https://github.com/user-attachments/assets/7213fbd3-7cf5-4152-bb14-673f0dec7045" />
 
 ---
 ข้อมูล SHA-1 Fingerprint ของเครื่องที่ใช้พัฒนา (ได้จากคำสั่ง ./gradlew signingReport):
@@ -592,17 +594,20 @@ Widget build(BuildContext context) {
 
 > ✅ **Checkpoint 4.1** ถ่ายภาพหน้าจอ 3 ภาพเรียงกัน คือ (ก) แอปตอนเพิ่งเปิดขึ้นมาครั้งแรกแบบยังไม่ล็อกอิน แสดงหน้า Login (ข) หลังล็อกอินสำเร็จ แอปสลับไปแสดง `MainScaffold` อัตโนมัติโดยไม่ต้องกดอะไรเพิ่ม และ (ค) หลังกด "ออกจากระบบ" แอปสลับกลับไปหน้า Login เอง อธิบายว่าทำไมการใช้ `StreamBuilder` ฟัง `authStateChanges()` จึงทำให้ไม่ต้องเขียนโค้ดสั่ง Navigate ไปมาเอง
 
-```text
+``text
 บันทึกรูปผลลัพธ์ที่นี่ (3 ภาพ) และคำอธิบาย
 
 1. ภาพ (ก) หน้าจอเมื่อเปิดแอปครั้งแรก (ยังไม่ล็อกอิน แสดง LoginPage)
 [แนบภาพหน้าจอ LoginPage ที่นี่]
+<img width="475" height="966" alt="image" src="https://github.com/user-attachments/assets/ae941f88-8937-4f61-a6be-76502dcf40cb" />
 
 2. ภาพ (ข) หน้าจอหลังล็อกอินสำเร็จ (สลับไปหน้า MainScaffold อัตโนมัติ)
 [แนบภาพหน้าจอ MainScaffold ที่นี่]
+<img width="445" height="942" alt="image" src="https://github.com/user-attachments/assets/c1362843-dca4-48a2-b8d6-3f23a1dedf5a" />
 
 3. ภาพ (ค) หน้าจอหลังกดปุ่ม "ออกจากระบบ" (สลับกลับมาหน้า LoginPage อัตโนมัติ)
 [แนบภาพหน้าจอ LoginPage หลัง Logout ที่นี่]
+<img width="436" height="935" alt="image" src="https://github.com/user-attachments/assets/23cdd221-4727-46df-a8af-2ae8fefb5b4f" />
 
 ---
 คำอธิบาย: ทำไมการใช้ StreamBuilder ฟัง authStateChanges() จึงทำให้ไม่ต้องเขียนโค้ดสั่ง Navigate ไปมาเอง:
@@ -621,7 +626,7 @@ Widget build(BuildContext context) {
 3. ข้อดีเทียบกับการสั่ง Navigate ด้วยตนเอง:
    - ไม่ต้องเขียนโค้ด Navigator.push, Navigator.pop หรือ Navigator.pushReplacement กระจัดกระจายตามปุ่มต่างๆ
    - ป้องกันปัญหาข้อผิดพลาดทางตรรกะ เช่น หน้าจอค้าง, สถานะบน UI ไม่ตรงกับสถานะจริงในฐานข้อมูล (Out of Sync), หรือปัญหาการกดย้อนกลับ (Back Button) แล้วหลุดกลับไปหน้าก่อนหน้าอย่างไม่ถูกต้อง
-```
+``
 
 ---
 ## ส่วนที่ 5: ขยาย Repository Pattern ด้วย ItemRepositoryFirestore
@@ -716,7 +721,7 @@ final pages = [
 
 > ✅ **Checkpoint 5.1** ถ่ายภาพหน้าจอ Home ที่แสดงสินค้าจากทั้งสองแหล่งข้อมูลปนกันอยู่ในลิสต์เดียว พร้อม Badge ที่แยกแหล่งที่มาชัดเจน (ถ้ายังไม่เคยมีประกาศจริงใน Firestore เลย ให้ทำส่วนที่ 6 ให้เสร็จก่อนแล้วย้อนกลับมาถ่ายภาพ Checkpoint นี้) อธิบายว่าการออกแบบให้ `HomePage` ไม่รู้จัก `ItemRepositoryApi`/`ItemRepositoryFirestore` โดยตรง แต่รู้จักผ่าน Interface `ItemRepository` เท่านั้น ช่วยให้ทดสอบหรือเปลี่ยนแหล่งข้อมูลในอนาคตง่ายขึ้นอย่างไร
 
-```text
+``text
 บันทึกรูปผลลัพธ์ที่นี่ และคำอธิบาย
 
 1. ภาพหน้าจอหน้า Home แสดงรายการสินค้ารวมกันทั้งจาก Fake Store API (🏪) และ Cloud Firestore (🎓):
@@ -733,7 +738,7 @@ final pages = [
    - HomePage พึ่งพาเพียง Abstraction (ItemRepository) ทำให้เกิด Polymorphism เราสามารถส่ง List<ItemRepository> ที่ประกอบด้วยกี่แหล่งข้อมูลก็ได้ (เช่น API, Firestore, SQLite, Mock Data)
    - โค้ดของ HomePage รวมข้อมูลได้ง่ายดายด้วย Future.wait(widget.repositories.map((repo) => repo.getItems()))
    - หากในอนาคตต้องการเพิ่ม Data Source อื่น เช่น GraphQL หรือฐานข้อมูลภายในเครื่อง ก็เพียงแค่สร้าง Class ใหม่ที่ implements ItemRepository แล้วนำมาใส่ใน List โดยไม่ต้องแก้ไขโค้ดภายใน HomePage แม้แต่น้อย
-```
+``
 
 ---
 ## ส่วนที่ 6: "โพสต์ขายจริง" — เชื่อม MyDraftsPage เข้ากับ Storage และ Firestore
