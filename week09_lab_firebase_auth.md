@@ -811,9 +811,9 @@ final pages = [
 <img width="422" height="932" alt="image" src="https://github.com/user-attachments/assets/1945f82b-ae6b-45ba-bbb4-e911e75c5734" />
 
 
-```
+``
 
----
+--
 ## ส่วนที่ 7 (Self-Study): สำรวจ Firebase Security Rules
 
 ส่วนนี้เป็นการศึกษาด้วยตนเองเพิ่มเติมจากที่กล่าวถึงสั้น ๆ ในเนื้อหาหัวข้อ 9.9 ไม่ใช่แกนหลักของใบงาน แต่**สำคัญมากสำหรับการทำแอปจริง**เพราะโค้ด Flutter ทั้งหมดที่เขียนมาในส่วนที่ 1-6 ยังไม่ได้ป้องกันไม่ให้ผู้ใช้คนหนึ่งแก้ไข/ลบประกาศของอีกคนหนึ่งเลย (เพียงแค่ UI ไม่มีปุ่มให้กดเท่านั้น ผู้ที่เขียนโค้ดเรียก Firestore เองโดยตรงยังทำได้อยู่)
@@ -841,7 +841,7 @@ service cloud.firestore {
 
 > ✅ **Checkpoint 7.1 (Self-Study)** ถ่ายภาพหน้าจอผลการทดลองทั้ง 2 กรณีใน Rules Playground เขียนอธิบายสั้น ๆ ว่าทำไม Client-side Validation (การไม่แสดงปุ่มแก้ไขให้เห็น) เพียงอย่างเดียวจึงไม่เพียงพอต่อความปลอดภัยของข้อมูลจริง
 
-```text
+``text
 บันทึกรูปผลลัพธ์ที่นี่ และคำอธิบาย
 
 1. ภาพหน้าจอผลการทดลองใน Rules Playground กรณี (ก) ผู้ใช้ล็อกอินแก้ไขเอกสารของตนเอง (sellerId ตรงกัน -> Allowed):
@@ -863,9 +863,9 @@ service cloud.firestore {
    - ด้วยกฎ:
      allow update, delete: if request.auth != null && request.auth.uid == resource.data.sellerId;
      เซิร์ฟเวอร์จะตรวจสอบทุกครั้งว่า Token ของผู้ส่งคำขอ (request.auth.uid) ตรงกับ sellerId ที่ถูกบันทึกไว้ในเอกสารจริงหรือไม่ หากไม่ตรงกัน เซิร์ฟเวอร์จะตัดคำขอและส่งสถานะ PERMISSION_DENIED ทันที ทำให้ไม่สามารถแก้ไขหรือลบข้อมูลของคนอื่นได้ไม่ว่าจะส่งคำขอมาจากช่องทางใดก็ตาม
-```
+``
 
----
+--
 ## ส่วนที่ 8: ทดสอบสถานการณ์ Offline และสถานะการล็อกอิน
 
 ### ขั้นตอนที่ 8.1: 🔧 ทำตามขั้นตอน
@@ -879,7 +879,7 @@ service cloud.firestore {
 
 > ✅ **Checkpoint 8.1** ถ่ายภาพหน้าจอผลการทดสอบทั้ง 4 ข้อ 
 
-```text
+``text
 บันทึกรูปผลลัพธ์ที่นี่ 
 
 1. ภาพหน้าจอการทดสอบข้อที่ 1 (ล็อกอินค้างไว้ ปิดแอปทั้งหมด แล้วเปิดใหม่ -> เข้า MainScaffold ทันที):
@@ -900,9 +900,9 @@ service cloud.firestore {
 - ข้อ 2: ข้อมูล Favorites และ Drafts ถูกจัดเก็บใน Local SQLite ผ่าน Drift Database จึงไม่พึ่งพาเครือข่ายและทำงานได้แบบ Offline-First 100%
 - ข้อ 3: การโพสต์ขายจริงต้องการอัปโหลดไฟล์ไปยัง Firebase Storage และบันทึก Cloud Firestore ซึ่งต้องใช้เครือข่าย โค้ดมีการใช้ try/catch เพื่อดักจับ Network Exception และแสดงข้อความเตือนอย่างสุภาพ ป้องกันไม่ให้แอป Crash
 - ข้อ 4: เมื่อเครือข่ายพร้อม การทำงานร่วมกันระหว่าง StorageService, ItemRepositoryFirestore และ Drift Database ทำงานได้อย่างสมบูรณ์แบบ
-```
+``
 
----
+--
 ## ปัญหาที่พบบ่อยและวิธีแก้ไข (Troubleshooting)
 
 **Error `[core/no-app]` หรือ `Firebase has not been correctly initialized`** มักเกิดจากลืมเรียก `await Firebase.initializeApp(...)` ก่อน `runApp()` หรือลืม `WidgetsFlutterBinding.ensureInitialized()` ที่บรรทัดแรกสุดของ `main()` ตรวจสอบลำดับโค้ดในขั้นตอน 1.3 อีกครั้ง
