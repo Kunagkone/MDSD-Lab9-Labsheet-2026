@@ -787,29 +787,30 @@ final pages = [
 
 > ✅ **Checkpoint 6.1** โพสต์ขายจริงอย่างน้อย 2 รายการผ่านแอป ถ่ายภาพหน้าจอ Firebase Console เมนู Firestore Database ที่แสดง Collection `items` มีเอกสารที่โพสต์เข้ามาจริง พร้อม field `sellerId` ที่ตรงกับ `uid` ของบัญชีที่ใช้ทดสอบ และยืนยันว่าร่างทั้งสองรายการหายไปจาก `MyDraftsPage` แล้ว
 
-```text
+``text
 บันทึกรูปผลลัพธ์ที่นี่
 
 1. ภาพหน้าจอ Firebase Console เมนู Firestore Database (แสดงเอกสารใน Collection items พร้อม field sellerId ที่ตรงกับ UID ของผู้ใช้):
 [แนบภาพหน้าจอ Firestore Collection items ที่นี่]
+<img width="1882" height="892" alt="image" src="https://github.com/user-attachments/assets/29a4cce7-e98d-4533-b75e-b9e915b9794f" />
 
 2. ภาพหน้าจอหน้าลงประกาศขายสินค้า / หน้าร่างประกาศ (ยืนยันว่าข้อมูลร่างถูกลบออกหลังการโพสต์ขายจริงสำเร็จ):
 [แนบภาพหน้าจอหน้าร่างประกาศหลังโพสต์สำเร็จที่นี่]
-```
+``
+<img width="453" height="898" alt="image" src="https://github.com/user-attachments/assets/baedc2d5-cd34-4ae3-9a22-3d76e63c3db5" />
 
 > ✅ **Checkpoint 6.2** ถ่ายภาพหน้าจอ Firebase Console เมนู Storage ที่แสดงไฟล์รูปภาพที่อัปโหลดสำเร็จ และภาพหน้าจอ Firestore ที่แสดงว่าเอกสารมี field `imageUrl` เป็น URL จริงที่เปิดดูได้ ถ่ายภาพหน้าจอแอปที่แสดงรูปสินค้านั้นบนหน้า Home ผ่าน `Image.network(imageUrl)` ด้วย (ย้อนกลับไปถ่ายภาพ Checkpoint 5.1 ให้ครบตอนนี้ ถ้ายังไม่ได้ทำ)
 
-```text
+``text
 บันทึกรูปผลลัพธ์ที่นี่
 
-1. ภาพหน้าจอ Firebase Console เมนู Storage (แสดงไฟล์รูปภาพที่อัปโหลดในโฟลเดอร์ listings/):
-[แนบภาพหน้าจอ Firebase Storage ที่นี่]
 
-2. ภาพหน้าจอ Cloud Firestore (แสดงเอกสารที่มี field imageUrl เป็น Download URL ที่ถูกต้อง):
-[แนบภาพหน้าจอ Firestore field imageUrl ที่นี่]
 
-3. ภาพหน้าจอแอปบนหน้า Home (แสดงรูปภาพสินค้าที่ดึงมาจาก Firebase Storage ผ่าน Image.network(imageUrl)):
-[แนบภาพหน้าจอแอปแสดงรูปจาก Firebase Storage ที่นี่]
+<img width="1841" height="932" alt="image" src="https://github.com/user-attachments/assets/9359d562-abf4-44c8-8a9c-bdd81818faeb" />
+
+<img width="422" height="932" alt="image" src="https://github.com/user-attachments/assets/1945f82b-ae6b-45ba-bbb4-e911e75c5734" />
+
+
 ```
 
 ---
