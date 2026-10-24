@@ -846,9 +846,11 @@ service cloud.firestore {
 
 1. ภาพหน้าจอผลการทดลองใน Rules Playground กรณี (ก) ผู้ใช้ล็อกอินแก้ไขเอกสารของตนเอง (sellerId ตรงกัน -> Allowed):
 [แนบภาพหน้าจอ Rules Playground กรณีผ่าน (Green / Allowed) ที่นี่]
+<img width="1846" height="915" alt="image" src="https://github.com/user-attachments/assets/a9a58443-7719-458c-bd06-83961590c6b7" />
 
 2. ภาพหน้าจอผลการทดลองใน Rules Playground กรณี (ข) ผู้ใช้พยายามแก้ไขเอกสารของผู้อื่น (sellerId ไม่ตรงกัน -> Denied):
 [แนบภาพหน้าจอ Rules Playground กรณีถูกปฏิเสธ (Red / Denied) ที่นี่]
+<img width="1830" height="907" alt="image" src="https://github.com/user-attachments/assets/a5e6c6fc-abef-4e34-8dde-1c380f783f22" />
 
 ---
 คำอธิบาย: ทำไม Client-side Validation (การไม่แสดงปุ่มแก้ไขให้เห็น) เพียงอย่างเดียวจึงไม่เพียงพอต่อความปลอดภัยของข้อมูลจริง:
